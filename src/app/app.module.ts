@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
+import { HttpModule } from '@angular/http';
 
 import { MdRadioModule, MdButtonModule, MdIconModule } from '@angular/material';
 import {MdMenuModule} from '@angular/material';
@@ -23,6 +24,7 @@ import { TripFormComponent } from './trip-form/trip-form.component';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     MdRadioModule,
     MdButtonModule,
     MdIconModule,
