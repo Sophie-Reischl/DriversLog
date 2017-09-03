@@ -1,0 +1,15 @@
+.header-bar {
+  width: calc(100% - 50px);
+  background-color: #3f51b5;
+  padding: 0 25px;
+  color: white;
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+.flex-div{
+  flex-grow: 1;
+  height: 64px;
+  display: flex;
+  top:0;
+}
