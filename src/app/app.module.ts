@@ -1,12 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { HttpModule } from '@angular/http';
 
-import { MdRadioModule, MdButtonModule, MdIconModule } from '@angular/material';
-import {MdMenuModule} from '@angular/material';
+import {
+  MdRadioModule,
+  MdButtonModule,
+  MdIconModule,
+  MdInputModule,
+  MdMenuModule
+} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HeaderBarComponent } from './header-bar/header-bar.component';
@@ -26,11 +32,14 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    FormsModule,
     HttpModule,
     MdRadioModule,
     MdButtonModule,
     MdIconModule,
     MdMenuModule,
+    MdInputModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
   ],
