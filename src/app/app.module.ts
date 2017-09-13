@@ -13,6 +13,7 @@ import { HeaderBarComponent } from './header-bar/header-bar.component';
 import { TripListComponent } from './trip-list/trip-list.component';
 import { StatisticComponent } from './statistic/statistic.component';
 import { TripFormComponent } from './trip-form/trip-form.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TripFormComponent } from './trip-form/trip-form.component';
     HeaderBarComponent,
     TripListComponent,
     StatisticComponent,
-    TripFormComponent
+    TripFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
