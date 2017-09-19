@@ -1,12 +1,30 @@
+@import '../../variables';
+
 .content {
-  background-image: url('../../assets/bg.jpg');
-  background-repeat: no-repeat no-repeat;
-  background-position: bottom;
   justify-content: center;
-  background-size: cover;
+  position: relative;
+  overflow: hidden;
   display: flex;
   height: 100vh;
   width: 100%;
+
+  .background-container {
+    background-image: url('../../assets/bg.jpg');
+    background-repeat: no-repeat no-repeat;
+    background-size: cover;
+    transform: scale(1,1);
+    transition: all .5s;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 1;
+
+    &.zoom {
+      transform: scale(1.1);
+      opacity: 0;
+    }
+  }
 
   .form-wrapper {
     margin-top: 100px;
@@ -16,52 +34,21 @@
       flex-direction: column;
       display: flex;
 
-      .input-wrapper {
-        position: relative;
-
-        &:before {
-          content: '';
-          border-right: 2px solid white;
-          position: absolute;
-          height: 30px;
-          left: 45px;
-          top: 20px;
-        }
-
-        input {
-          // background-color: rgba(255, 255, 255, .7);
-          background-color: white;
-          padding: 15px 15px 15px 60px;
-          width: calc(100% - 75px);
-          font-size: 14px;
-          margin: 10px 0;
-          border: none;
-          color: white;
-          height: 18px;
-
-          &:focus {
-            outline: none;
-          }
-
-          &::-webkit-input-placeholder {
-            text-transform: uppercase;
-            color: white;
-          }
-
-          &::-moz-placeholder {
-            text-transform: uppercase;
-            color: white;
-          }
-        }
+      .mat-icon {
+        color: $grey;
       }
 
       button {
-        background-color: white;
-        border-radius: 0;
+        transition: background-color .5s;
+        background-color: $primary;
         margin-top: 10px;
+        color: $white;
         padding: 6px;
+
+        &:disabled {
+          background-color: $light-grey;
+        }
       }
     }
   }
-
 }

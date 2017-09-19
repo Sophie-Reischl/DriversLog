@@ -1,14 +1,17 @@
+// angular
 import { Injectable } from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map'
 
-import { config } from './app.config';
-import { Trip } from './models/trip';
+// models
+import { Trip } from '../_models/trip';
+
+// custom
+import { config } from '../app.config';
 
 @Injectable()
 export class TripService {
-  private path: string = config.apiUrl + '/trip';
+  private path: string = `${config.apiUrl}/trip`;
   private headers: Headers = new Headers();
 
   constructor(private http: Http) { }

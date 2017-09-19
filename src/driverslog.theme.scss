@@ -1,0 +1,45 @@
+@import '~@angular/material/theming';
+@import './variables.scss';
+@include mat-core();
+
+// palette for q-tax
+$mat-q-tax: (
+  50: #e0f7fa,
+  100: #b2ebf2,
+  200: #80deea,
+  300: #4dd0e1,
+  400: #26c6da,
+  500: #00bcd4,
+  600: #00acc1,
+  700: #0097a7,
+  800: #00838f,
+  900: #006064,
+  A100: $light-red,
+  A200: $light-yellow,
+  A400: $light-green,
+  A700: #00b8d4,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+// set primary, accent and warn from palette
+$q-tax-primary: mat-palette($mat-q-tax, 600);
+$q-tax-accent:  mat-palette($mat-q-tax, 900);
+$q-tax-warn: mat-palette($mat-q-tax, A100);
+
+$q-tax-theme: mat-light-theme($q-tax-primary, $q-tax-accent, $q-tax-warn);
+@include angular-material-theme($q-tax-theme);

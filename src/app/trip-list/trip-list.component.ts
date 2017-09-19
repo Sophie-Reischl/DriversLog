@@ -1,6 +1,11 @@
+// angular
 import { Component, OnInit } from '@angular/core';
 
-import { TripService } from '../trip.service';
+// models
+import { Trip } from '../_models/trip';
+
+// custom
+import { TripService } from '../_api/trip.service';
 
 @Component({
   selector: 'app-trip-list',
@@ -9,18 +14,14 @@ import { TripService } from '../trip.service';
   providers: [TripService]
 })
 export class TripListComponent implements OnInit {
+  trips: Trip[] = null;
 
   constructor(private tripService: TripService) { }
 
   ngOnInit() {
     this.tripService.readAll().subscribe(
-      (trips) => {
-        console.log(trips);
-      },
-      (error) => {
-        console.log(error);
-      }
+      result => this.trips = result,
+      error => console.log(error)
     )
   }
-
 }

@@ -20,5 +20,15 @@ export const appRoutes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: '',
+    redirectTo: '/trips',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: '/trips',
+    pathMatch: 'full'
   }
 ]

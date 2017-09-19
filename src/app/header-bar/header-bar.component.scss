@@ -1,12 +1,22 @@
+@import '../../variables';
+
 .header-bar {
   width: calc(100% - 50px);
-  background-color: #3f51b5;
+  background-color: $primary;
   padding: 0 25px;
   color: white;
   height: 64px;
   display: flex;
   align-items: center;
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: $white;
+  }
 }
+
 .flex-div{
   flex-grow: 1;
   height: 64px;
