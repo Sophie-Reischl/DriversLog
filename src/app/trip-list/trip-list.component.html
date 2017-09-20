@@ -1,3 +1,19 @@
-<button class="add" md-fab color="primary" routerLink="/trip">
+<div class="content">
+
+  <md-list>
+    <md-list-item *ngFor="let trip of trips">
+      <span class="date">{{ trip.date | date: 'd. MMM'}}</span>
+      <span>{{ trip.totalKm }}km</span>
+      <div class="spacer"></div>
+      <button md-icon-button (click)="openDialog(trip)">
+        <md-icon>mode_edit</md-icon>
+      </button>
+    </md-list-item>
+  </md-list>
+
+</div>
+
+
+<button class="add" md-fab color="primary" (click)="openDialog()">
   <md-icon>add</md-icon>
 </button>

@@ -1,5 +1,30 @@
+@import '../../variables';
+
 .add {
   position: fixed;
   bottom: 25px;
   right: 25px;
+}
+
+.content {
+
+  .mat-list {
+
+    .mat-list-item {
+      border-top: 1px solid $light-grey;
+
+      .date {
+        width: 150px;
+      }
+
+      .spacer {
+        display: flex;
+        flex-grow: 1;
+      }
+
+      &:last-of-type {
+        border-bottom: 1px solid $light-grey;
+      }
+    }
+  }
 }

@@ -2,4 +2,9 @@
 @import "./driverslog.theme.scss";
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-html, body, div, ul, li { margin: 0; padding: 0; font-family: roboto;}
+html, body, div, ul, li, h1, h2, h3 { margin: 0; padding: 0; font-family: roboto;}
+
+// resets the padding of the dialog container
+.mat-dialog-container {
+  padding: 0 !important;
+}

@@ -14,7 +14,12 @@ import {
   MdIconModule,
   MdInputModule,
   MdMenuModule,
-  MdSnackBarModule
+  MdSnackBarModule,
+  MdListModule,
+  MdDialogModule,
+  MdDatepickerModule,
+  MdNativeDateModule,
+  MdProgressBarModule
 } from '@angular/material';
 
 // third party angular modules
@@ -26,8 +31,8 @@ import { AppComponent } from './app.component';
 import { HeaderBarComponent } from './header-bar/header-bar.component';
 import { TripListComponent } from './trip-list/trip-list.component';
 import { StatisticComponent } from './statistic/statistic.component';
-import { TripFormComponent } from './trip-form/trip-form.component';
 import { LoginComponent } from './login/login.component';
+import { TripDialogComponent } from './trip-dialog/trip-dialog.component';
 
 @NgModule({
   declarations: [
@@ -35,24 +40,30 @@ import { LoginComponent } from './login/login.component';
     HeaderBarComponent,
     TripListComponent,
     StatisticComponent,
-    TripFormComponent,
-    LoginComponent
+    LoginComponent,
+    TripDialogComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
     HttpModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes),
     MdRadioModule,
     MdButtonModule,
     MdIconModule,
     MdMenuModule,
     MdInputModule,
     MdSnackBarModule,
-    BrowserAnimationsModule,
-    RouterModule.forRoot(appRoutes),
+    MdListModule,
+    MdDialogModule,
+    MdDatepickerModule,
+    MdNativeDateModule,
+    MdProgressBarModule
   ],
   providers: [],
+  entryComponents: [TripDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

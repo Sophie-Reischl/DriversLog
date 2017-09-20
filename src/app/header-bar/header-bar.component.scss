@@ -1,9 +1,9 @@
 @import '../../variables';
 
 .header-bar {
-  width: calc(100% - 50px);
+  width: calc(100% - 35px);
   background-color: $primary;
-  padding: 0 25px;
+  padding: 0 10px 0 25px;
   color: white;
   height: 64px;
   display: flex;

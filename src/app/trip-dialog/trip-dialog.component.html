@@ -1,0 +1,48 @@
+<div md-dialog-title>
+  <h3>Edit Trip</h3>
+
+  <md-menu #menu="mdMenu">
+    <button md-menu-item [md-dialog-close]="{ mode: mode.delete, trip: tripForm.value }">
+      <md-icon>delete</md-icon>
+      <span>Delete Trip</span>
+    </button>
+  </md-menu>
+  <button md-icon-button [mdMenuTriggerFor]="menu" *ngIf="data.mode == 1">
+    <md-icon>delete</md-icon>
+  </button>
+</div>
+
+<form [formGroup]="tripForm">
+
+  <div md-dialog-content>
+
+    <md-input-container>
+      <input mdInput [mdDatepicker]="datePicker" formControlName="date" placeholder="Date">
+      <button mdSuffix [mdDatepickerToggle]="datePicker"></button>
+    </md-input-container>
+    <md-datepicker #datePicker></md-datepicker>
+
+    <md-input-container>
+      <input mdInput placeholder="Start Km" formControlName="startKm" (keyup)="calcTotalKm()">
+    </md-input-container>
+
+    <md-input-container>
+      <input mdInput placeholder="End Km" formControlName="endKm" (keyup)="calcTotalKm()">
+    </md-input-container>
+
+    <md-input-container>
+      <input mdInput placeholder="Total Km" formControlName="totalKm">
+    </md-input-container>
+
+    <md-input-container>
+      <input mdInput placeholder="Comment" formControlName="comment">
+    </md-input-container>
+
+  </div>
+
+  <div md-dialog-actions>
+    <button md-button [md-dialog-close]="{ mode: data.mode, ok: false }">Abbrechen</button>
+    <button md-button [md-dialog-close]="{ mode: data.mode, ok: true, trip: tripForm.value }" [disabled]="tripForm.invalid">Speichern</button>
+  </div>
+
+</form>

@@ -1,0 +1,37 @@
+@import '../../variables';
+
+.mat-dialog-title {
+  justify-content: space-between;
+  background-color: $primary;
+  padding: 10px 15px;
+  display: flex;
+
+  h3 {
+    align-items: center;
+    font-weight: normal;
+    font-size: 18px;
+    color: $white;
+    display: flex;
+  }
+
+  .mat-icon {
+    color: $white;
+  }
+}
+
+.mat-dialog-content {
+  width: calc(100% - 30px);
+  padding: 0 15px;
+  margin: 0;
+
+  .mat-input-container {
+    width: 100%;
+  }
+}
+
+.mat-dialog-actions {
+  justify-content: flex-end;
+  padding: 15px 15px 0 15px;
+  margin-bottom: 15px;
+  display: flex;
+}

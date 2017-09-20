@@ -22,6 +22,26 @@ export class TripService {
     return this.http.get(url, { headers: this.headers })
       .map((response: Response) => {
         if (response.status == 204) return undefined;
+        else return response.json().records || {};
+      })
+  }
+
+  create(trip): Observable<Trip> {
+    let url = `${this.path}/create.php`;
+
+    return this.http.post(url, trip, { headers: this.headers })
+      .map((response: Response) => {
+        if (response.status == 204) return undefined;
+        else return response.json() || {};
+      })
+  }
+
+  delete(id): Observable<Trip> {
+    let url = `${this.path}/delete.php?id=${id}`;
+
+    return this.http.delete(url, { headers: this.headers })
+      .map((response: Response) => {
+        if (response.status == 204) return undefined;
         else return response.json() || {};
       })
   }

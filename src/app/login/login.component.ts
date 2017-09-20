@@ -33,18 +33,17 @@ export class LoginComponent {
   }
 
   onSubmit() {
-    setTimeout(() => {
-      this.authService.login(this.loginForm.value).subscribe(
-        (result) => {
-          console.log(result);
-          this.zoom = true;
+    this.authService.login(this.loginForm.value).subscribe(
+      (result) => {
+        this.zoom = true;
+        // TODO: set token in localstorage
+        setTimeout(() => {
           this.router.navigate(['/']);
-        },
-        (error) => {
-          this.handle.error('Failed to log in.');
-        }
-      )
-    }, 500);
+        }, 750);
+      },
+      (error) => {
+        this.handle.error('Failed to log in.');
+      }
+    )
   }
-
 }
