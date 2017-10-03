@@ -1,13 +1,17 @@
 <div class="content">
 
   <md-list>
-    <md-list-item *ngFor="let trip of trips">
+    <md-list-item *ngFor="let trip of trips" (click)="openDialog(trip)">
+
       <span class="date">{{ trip.date | date: 'd. MMM'}}</span>
+
       <span>{{ trip.totalKm }}km</span>
+
       <div class="spacer"></div>
-      <button md-icon-button (click)="openDialog(trip)">
-        <md-icon>mode_edit</md-icon>
-      </button>
+
+      <md-icon *ngIf="trip.totalKm > 0" class="check">check_circle</md-icon>
+      <md-icon *ngIf="trip.totalKm == 0" class="warn">error</md-icon>
+
     </md-list-item>
   </md-list>
 

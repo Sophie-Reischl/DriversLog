@@ -25,6 +25,17 @@
       &:last-of-type {
         border-bottom: 1px solid $light-grey;
       }
+
+      .mat-icon {
+
+        &.check {
+          color: $light-green;
+        }
+
+        &.warn {
+          color: $light-yellow;
+        }
+      }
     }
   }
 }

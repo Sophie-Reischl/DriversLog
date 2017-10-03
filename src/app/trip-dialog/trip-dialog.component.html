@@ -2,7 +2,7 @@
   <h3>Edit Trip</h3>
 
   <md-menu #menu="mdMenu">
-    <button md-menu-item [md-dialog-close]="{ mode: mode.delete, trip: tripForm.value }">
+    <button md-menu-item [md-dialog-close]="{ mode: mode.delete, ok: true, trip: tripForm.value }">
       <md-icon>delete</md-icon>
       <span>Delete Trip</span>
     </button>

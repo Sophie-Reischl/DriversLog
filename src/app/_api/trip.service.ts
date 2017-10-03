@@ -26,9 +26,8 @@ export class TripService {
       })
   }
 
-  create(trip): Observable<Trip> {
+  create(trip): Observable<any> {
     let url = `${this.path}/create.php`;
-    console.log(trip);
 
     return this.http.post(url, trip, { headers: this.headers })
       .map((response: Response) => {
@@ -37,7 +36,17 @@ export class TripService {
       })
   }
 
-  delete(id): Observable<Trip> {
+  update(trip): Observable<any> {
+    let url = `${this.path}/update.php?id=${trip.id}`;
+
+    return this.http.put(url, trip, { headers: this.headers })
+      .map((response: Response) => {
+        if (response.status == 204) return undefined;
+        else return response.json() || {};
+      })
+  }
+
+  delete(id): Observable<any> {
     let url = `${this.path}/delete.php?id=${id}`;
 
     return this.http.delete(url, { headers: this.headers })

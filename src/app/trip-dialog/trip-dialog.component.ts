@@ -1,8 +1,9 @@
 // angular
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MD_DIALOG_DATA } from '@angular/material';
 
+import { NumberValidator } from '../_validators/number.validator';
 import { mode } from '../app.config';
 
 @Component({
@@ -22,7 +23,7 @@ export class TripDialogComponent {
     this.tripForm = this.fb.group({
       id: [this.data.trip.id],
       date: [this.data.trip.date, [Validators.required]],
-      startKm: [this.data.trip.startKm, [Validators.required]],
+      startKm: [this.data.trip.startKm, [Validators.required, NumberValidator()]],
       endKm: [this.data.trip.endKm],
       totalKm: [this.data.trip.totalKm],
       comment: [this.data.trip.comment]
