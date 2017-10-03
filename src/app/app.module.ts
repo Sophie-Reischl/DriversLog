@@ -32,7 +32,11 @@ import { HeaderBarComponent } from './header-bar/header-bar.component';
 import { TripListComponent } from './trip-list/trip-list.component';
 import { StatisticComponent } from './statistic/statistic.component';
 import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 import { TripDialogComponent } from './trip-dialog/trip-dialog.component';
+import { DialogHandlingService } from './dialog-handling.service';
+import { AuthGuard } from './_guards/auth.guard';
+import { UnAuthGuard } from './_guards/unauth.guard';
 
 @NgModule({
   declarations: [
@@ -41,6 +45,7 @@ import { TripDialogComponent } from './trip-dialog/trip-dialog.component';
     TripListComponent,
     StatisticComponent,
     LoginComponent,
+    LogoutComponent,
     TripDialogComponent
   ],
   imports: [
@@ -62,7 +67,7 @@ import { TripDialogComponent } from './trip-dialog/trip-dialog.component';
     MdNativeDateModule,
     MdProgressBarModule
   ],
-  providers: [],
+  providers: [DialogHandlingService, AuthGuard, UnAuthGuard],
   entryComponents: [TripDialogComponent],
   bootstrap: [AppComponent]
 })

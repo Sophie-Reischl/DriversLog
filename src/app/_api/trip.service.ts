@@ -7,11 +7,11 @@ import { Observable } from 'rxjs/Observable';
 import { Trip } from '../_models/trip';
 
 // custom
-import { config } from '../app.config';
+import { getConfig } from '../app.config';
 
 @Injectable()
 export class TripService {
-  private path: string = `${config.apiUrl}/trip`;
+  private path: string = `${getConfig().apiUrl}/trip`;
   private headers: Headers = new Headers();
 
   constructor(private http: Http) { }
@@ -28,6 +28,7 @@ export class TripService {
 
   create(trip): Observable<Trip> {
     let url = `${this.path}/create.php`;
+    console.log(trip);
 
     return this.http.post(url, trip, { headers: this.headers })
       .map((response: Response) => {

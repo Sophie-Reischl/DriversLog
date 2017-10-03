@@ -4,11 +4,11 @@ import { Headers, Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 // custom
-import { config } from '../app.config';
+import { getConfig } from '../app.config';
 
 @Injectable()
 export class AuthService {
-  private path: string =  `${config.apiUrl}/auth`;
+  private path: string =  `${getConfig().apiUrl}/auth`;
   private headers: Headers = new Headers();
 
   constructor(private http: Http) { }
